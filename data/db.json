@@ -1,22 +1,28 @@
 {
-    "posts": [
-      {
-        "id": 0,
-        "type": "IMG", 
-        "title":"Une image de sport", 
-        "content":"http://lorempixel.com/400/200/sports"
-      },
-      {
-        "id": 1,
-        "type": "QUOTE", 
-        "title":"Hello World",
-        "content":"Hello World"
-      },
-      {
-        "id": 2,
-        "type": "VIDEO", 
-        "title":"Raspberry Pi", 
-        "content":"Gd1-YkvtVVs"
-      }
-    ]
-  }
+  "posts": [
+    {
+      "id": 0,
+      "type": "IMG",
+      "title": "Une image de sport",
+      "content": "http://lorempixel.com/400/200/sports"
+    },
+    {
+      "id": 1,
+      "type": "QUOTE",
+      "title": "Hello World",
+      "content": "Hello World"
+    },
+    {
+      "id": 2,
+      "type": "VIDEO",
+      "title": "Raspberry Pi",
+      "content": "Gd1-YkvtVVs"
+    },
+    {
+      "title": "test",
+      "content": "super quote",
+      "type": "QUOTE",
+      "id": 3
+    }
+  ]
+}

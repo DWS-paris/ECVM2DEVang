@@ -1,3 +1,12 @@
-<p>
-  addpost works!
-</p>
+<h2>Ajouter un post</h2>
+<form (submit)="submitForm()">
+  <input type="text" name="postTitle" [(ngModel)]="newPost.title">
+  <select name="postType"  [(ngModel)]="newPost.type">
+    <option value="IMG">Image</option>
+    <option value="QUOTE">Quote</option>
+    <option value="VIDEO">Vidéo</option>
+  </select>
+  <textarea name="postContent"  [(ngModel)]="newPost.content"></textarea>
+
+  <button type="submit">Ajouter</button>
+</form>
