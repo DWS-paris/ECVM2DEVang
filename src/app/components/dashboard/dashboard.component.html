@@ -1,0 +1,10 @@
+<section>
+
+  <!-- Faire une boucle sur une collection de données -->
+  <article *ngFor="let item of dataCollection">
+    
+    <!-- Utilisation du partial blog-post -->
+    <app-blog-post [item]="item" (eventSupBlogPost)="supBlogPost($event)"></app-blog-post>
+
+  </article>
+</section>
