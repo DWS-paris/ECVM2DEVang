@@ -9,13 +9,16 @@ const appRoutes: Routes = [
   },
   {
     path: 'dashboard',
-    // Charger le module de la route
     loadChildren: './components/dashboard/dashboard.module#DashboardModule'
   },
   {
     path: 'addpost',
-    // Charger le module de la route
     loadChildren: './components/addpost/addpost.module#AddpostModule'
+  },
+  {
+    // Ajouter un paramètre à la route
+    path: 'editpost/:id',
+    loadChildren: './components/editpost/editpost.module#EditpostModule'
   }
 ];
 

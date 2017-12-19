@@ -5,6 +5,12 @@
   <article *ngFor="let item of dataCollection">
     
     <!-- Utilisation du partial blog-post -->
-    <app-blog-post [item]="item" (eventSupBlogPost)="supBlogPost($event)"></app-blog-post>
+    <app-blog-post 
+    [item]="item" 
+    (eventSupBlogPost)="supBlogPost($event)"
+
+    (eventShowPost)="changeVue($event)"
+
+    ></app-blog-post>
   </article>
 </section>

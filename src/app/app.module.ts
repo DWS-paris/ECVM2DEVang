@@ -1,6 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+// Importer l'interface FormsModule pour utiliser le ngModel
+import { FormsModule } from '@angular/forms';
+
 // NEW v5.1.0 : Importer le module du router
 import { RouterModule } from '@angular/router';
 

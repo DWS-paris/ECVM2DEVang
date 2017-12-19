@@ -27,6 +27,12 @@ export class JsonService {
     return this.http.post(this.postsAPI, newPost).toPromise().then(this.dataFromApi).catch(this.handleError);
   }
 
+  // Fonction pour afficher un post depuis la BDD JsonServer => http.get
+  getSinglePost ( id: number ): Promise<any[]> {
+    // Récupérer les données depuis la BDD MongoDb
+    return this.http.get( `${this.postsAPI}/${id}` ).toPromise().then(this.dataFromApi).catch(this.handleError);
+  }
+
 
 
   // Traitement des réponses JSON
