@@ -12,35 +12,31 @@ export class DashboardComponent implements OnInit {
   // Injecter le service dans le constructor
   constructor( private myService: JsonService ) { }
 
-  public dataCollection: any = [
-    {
-      id: 0,
-      title: `Salut le monde`,
-      content: `Lorem ipsum dolor sit amet, consectetur adipiscing elit.`
-    },
-    {
-      id: 1,
-      title: `Hello World`,
-      content: `Lorem ipsum dolor sit amet, consectetur adipiscing elit.`
-    }
-  ];
+  // Créer une variable pour la collection de données
+  public dataCollection: any = undefined;
 
   // Créer une fonction pour supprimer un post
   public supBlogPost(item: any): void {
     alert(`Post à supprimer : ${item.title}`)
   }
 
-  
 
-  ngOnInit() {
+  // Créer une fonction pour charger les posts
+  public getBlogPosts(): void {
 
+    // Appeler la fonction du service
     this.myService.getAllPosts().then( data => {
-      console.log(data);
+
+      // Envoyer les donnés dans la collection
+      this.dataCollection = data;
       
     }).catch( error => {
       console.log(error);
     })
+  };
 
+  ngOnInit() {
+    this.getBlogPosts();
   }
 
 }
