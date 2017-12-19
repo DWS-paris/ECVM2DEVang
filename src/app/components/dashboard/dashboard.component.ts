@@ -1,11 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 
+// Importer le service
+import { JsonService } from '../../services/json.service';
+
 @Component({
   selector: 'app-dashboard',
-  templateUrl: './dashboard.component.html',
-  styles: []
+  templateUrl: './dashboard.component.html'
 })
 export class DashboardComponent implements OnInit {
+
+  // Injecter le service dans le constructor
+  constructor( private myService: JsonService ) { }
 
   public dataCollection: any = [
     {
@@ -25,9 +30,17 @@ export class DashboardComponent implements OnInit {
     alert(`Post à supprimer : ${item.title}`)
   }
 
-  constructor() { }
+  
 
   ngOnInit() {
+
+    this.myService.getAllPosts().then( data => {
+      console.log(data);
+      
+    }).catch( error => {
+      console.log(error);
+    })
+
   }
 
 }

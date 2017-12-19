@@ -1,6 +1,5 @@
 import { Injectable }     from '@angular/core';
 import { Http, Response } from '@angular/http';
-import { Headers } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 
 
@@ -13,19 +12,19 @@ export class JsonService {
   ) {}
 
   // Définition des adresses de l'API => routes/api.js
-  private getCategoriesUrl = 'http://localhost:3000/posts';
+  private postsAPI = 'http://localhost:3000/posts';
 
 
   // Fonction pour afficher la liste des tâche depuis la BDD MongDb => http.get
   getAllPosts (): Promise<any[]> {
     // Récupérer les données depuis la BDD MongoDb
-    return this.http.get(this.getCategoriesUrl).toPromise().then(this.dataFromMongodb).catch(this.handleError);
-    }
+    return this.http.get(this.postsAPI).toPromise().then(this.dataFromApi).catch(this.handleError);
+  }
 
 
 
   // Traitement des réponses JSON
-  private dataFromMongodb(res: Response) {
+  private dataFromApi(res: Response) {
     return res.json() || { };
   }
 
